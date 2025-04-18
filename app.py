@@ -26,7 +26,7 @@ def get_worksheet():
 worksheet = get_worksheet()
 
 # --- Load Data from Google Sheets ---
-@st.cache_data(ttl=60)
+@st.cache_data(ttl=10)
 def load_data():
     try:
         data = worksheet.get_all_records()
@@ -51,6 +51,10 @@ st.markdown("""
     <h1 style='text-align: center;'>🎉🏏 Global Premier League Scoreboard 🏏🎉</h1>
     <h4 style='text-align: center; color: grey;'>Tournament Dates: April 14 - May 14</h4>
 """, unsafe_allow_html=True)
+
+if st.button("🔄 Refresh Data"):
+    st.cache_data.clear()
+    st.experimental_rerun()
 
 # --- Color player names by team ---
 def color_player_name(name):
