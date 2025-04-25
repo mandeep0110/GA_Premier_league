@@ -39,8 +39,8 @@ df = load_data()
 
 # --- Constants ---
 teams = {
-    "Charles United": ["Fahad", "Charlotte", "Parameshwari", "Arpita", "Harsh", "Shailja"],
-    "Laimina Falcons": ["Zunaira", "Anushka", "Jhalak", "Farman", "Gurjeet", "Laxmi"],
+    "Charles United": ["Fahad", "Charlotte", "Parameshwari", "Arpita", "Laxmi", "Jhalak"],
+    "Laimina Falcons": ["Zunaira", "Anushka", "Farman", "Gurjeet","Akansha"],
 }
 player_team_map = {player: team for team, players in teams.items() for player in players}
 all_players = [p for players in teams.values() for p in players]
